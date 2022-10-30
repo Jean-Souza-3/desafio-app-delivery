@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="" style="font-family: 'Nunito', sans-serif;"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="nome">{{produto.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="detalhe">
+    <img src="{{produto.foto || 'https://via.placeholder.com/350'}}" alt="">
+    <h1 class="nome">{{produto.nome}}</h1>
+    <p class="desc">{{produto.descricao}}</p>
+    <h3 class="preco">{{produto.valor | currency: 'BRL'}}</h3>
+  </div>
+  <footer class="d-flex justify-content-between fixed-bottom">
+    <div class="d-flex align-items-center">
+      <ion-button style="font-family: 'Nunito', sans-serif;" (click)="subQtd()" color="light">-</ion-button>
+      <p class="fs-3 m-0 px-2" style="font-family: 'Nunito', sans-serif;">{{quantidade}}</p>
+      <ion-button style="font-family: 'Nunito', sans-serif;" (click)="addQtd()" color="light">+</ion-button>
+    </div>
+    <div>
+      <ion-button style="font-family: 'Nunito', sans-serif;" color="light" (click)="addProduto()" routerLink="/home">
+        Adicionar {{quantidade * produto.valor | currency: 'BRL'}}</ion-button>
+    </div>
+  </footer>
+</ion-content>

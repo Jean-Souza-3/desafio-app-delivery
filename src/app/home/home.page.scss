@@ -1,0 +1,30 @@
+.categoria{
+display: flex;
+align-items: center;
+padding: 10px 0px 10px 20px;
+background-color: #11111a;
+
+}
+
+.categoria img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.categoria h2{
+    margin: 0px 10px 0px 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    color: #ffff55;
+}
+
+.produto h2, p{
+    margin-left: 15px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+#total{
+    color: #ffd700;
+}

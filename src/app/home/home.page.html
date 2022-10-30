@@ -1,0 +1,35 @@
+<ion-content>
+  <div *ngFor = "let c of categorias">
+    <div class="categoria"> 
+      <img src="{{c.foto}}" alt="">
+      <h2><b>{{c.nome}}</b></h2>
+    </div>
+    <ion-list>
+    <ion-item *ngFor = "let p of c.produtos" class="produto" routerLink="/detalhe" (click)="salvarProduto(p)">
+      <ion-avatar slot=""start>
+        <img src="{{p.foto || 'https://via.placeholder.com/150'}}" alt="">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{p.nome}}</h2>
+        <p>{{p.descricao}}</p>
+        <p><b>{{p.valor | currency: 'BRL'}}</b></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  </div>
+  <div *ngIf="carrinho.length > 0">
+  <div class="pb-5"></div>
+  <footer routerLink="/carrinho" class="fixed-bottom bg-dark py-3 border-top d-flex justify-content-between">
+    <div class="fs-2 d-flex align-items-center">
+      <ion-icon name="cart-outline"></ion-icon>
+      <ion-badge color="warning">{{carrinho.length}}</ion-badge>
+    </div>
+    <div>
+      Finalizar
+    </div>
+    <div id="total">
+      Total {{totalCarrinho | currency: 'BRL'}}
+    </div>
+  </footer>
+  </div>
+</ion-content>
